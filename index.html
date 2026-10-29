@@ -1,0 +1,1002 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style Market | Online Shopping</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #222;
+}
+
+.announcement {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 13px;
+}
+
+.announcement span {
+    color: #ffcc70;
+}
+
+header {
+    background: white;
+    padding: 20px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 10px #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    color: #222;
+}
+
+.logo span {
+    color: #ff3f8e;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav button, .actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+nav button:hover {
+    color: #ff3f8e;
+}
+
+.search {
+    padding: 11px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-width: 220px;
+    width: 100%;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+}
+
+.hero {
+    margin: 25px auto;
+    width: 90%;
+    min-height: 380px;
+    background: #f8e9e5;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.hero-text {
+    padding: 45px;
+}
+
+.hero-text small {
+    color: #ff3f8e;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 65px);
+    margin: 20px 0;
+    line-height: 1;
+}
+
+.hero h1 span {
+    color: #ff3f8e;
+}
+
+.hero p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #222;
+    color: white;
+    padding: 13px 22px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.btn:hover {
+    background: #ff3f8e;
+}
+
+.hero img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+}
+
+.section {
+    padding: 35px 5%;
+}
+
+.section h2 {
+    font-size: 30px;
+    margin: 10px 0 25px;
+}
+
+.subtitle {
+    color: #ff3f8e;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.categories, .products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.category {
+    border: none;
+    background: #f5f5f5;
+    cursor: pointer;
+    text-align: left;
+    overflow: hidden;
+}
+
+.category img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.category h3 {
+    padding: 15px;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.filter {
+    border: 1px solid #ddd;
+    background: white;
+    padding: 10px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.filter.active, .filter:hover {
+    background: #222;
+    color: white;
+}
+
+.shop-tools {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.product {
+    min-width: 0;
+}
+
+.product-image {
+    position: relative;
+    overflow: hidden;
+    background: #f5f5f5;
+    aspect-ratio: 3 / 4;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .3s;
+}
+
+.product:hover img {
+    transform: scale(1.04);
+}
+
+.heart {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    padding: 9px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.heart.liked {
+    color: #ff3f8e;
+}
+
+.add {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    width: calc(100% - 16px);
+    padding: 12px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.add:hover {
+    background: #ff3f8e;
+    color: white;
+}
+
+.product-info {
+    padding-top: 12px;
+}
+
+.brand {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.name {
+    color: #777;
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+.price {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.old {
+    color: #999;
+    text-decoration: line-through;
+    font-weight: normal;
+}
+
+.discount {
+    color: #15935b;
+    font-size: 12px;
+}
+
+.rating {
+    color: #148452;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.promo {
+    margin: 30px 5%;
+    padding: 40px;
+    background: #222;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.promo p {
+    color: #ccc;
+    margin-top: 10px;
+}
+
+.newsletter {
+    background: #f8f2ef;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.newsletter input {
+    padding: 13px;
+    border: 1px solid #ddd;
+    max-width: 300px;
+    width: 65%;
+}
+
+.newsletter button {
+    padding: 14px;
+    background: #ff3f8e;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    padding: 30px 5%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer p {
+    margin-top: 10px;
+    color: #777;
+    font-size: 13px;
+}
+
+.drawer {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: min(400px, 100%);
+    height: 100%;
+    background: white;
+    z-index: 30;
+    padding: 20px;
+    transition: .3s;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px #999;
+}
+
+.drawer.show {
+    right: 0;
+}
+
+.drawer-header, .total {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.drawer-header button {
+    border: none;
+    background: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.bag-items {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.bag-item {
+    display: flex;
+    gap: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.bag-item img {
+    width: 70px;
+    height: 85px;
+    object-fit: cover;
+}
+
+.bag-item button {
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.bag-footer {
+    padding-top: 15px;
+}
+
+.bag-footer .btn {
+    width: 100%;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #0008;
+    z-index: 25;
+}
+
+.overlay.show {
+    display: block;
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #222;
+    color: white;
+    padding: 14px 20px;
+    display: none;
+    z-index: 40;
+    max-width: 90%;
+    text-align: center;
+}
+
+.toast.show {
+    display: block;
+}
+
+.empty {
+    display: none;
+    padding: 35px;
+    text-align: center;
+}
+
+@media(max-width: 850px) {
+    .categories, .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero img {
+        height: 300px;
+    }
+}
+
+@media(max-width: 500px) {
+    header {
+        padding: 15px;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .search {
+        max-width: none;
+    }
+
+    .hero {
+        width: 94%;
+    }
+
+    .hero-text {
+        padding: 25px;
+    }
+
+    .section {
+        padding: 30px 14px;
+    }
+
+    .section h2 {
+        font-size: 24px;
+    }
+
+    .category img {
+        height: 130px;
+    }
+
+    .promo {
+        margin: 20px 14px;
+        padding: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="announcement">
+    STYLE MARKET SPECIAL — <span>UP TO 50% OFF</span>
+</div>
+
+<header>
+    <div class="logo">STYLE <span>MARKET.</span></div>
+
+    <nav>
+        <button data-category="All">Home</button>
+        <button data-category="Women">Women</button>
+        <button data-category="Men">Men</button>
+        <button data-category="Shoes">Shoes</button>
+        <button data-category="Accessories">Accessories</button>
+    </nav>
+
+    <input class="search" id="search"
+        type="search" placeholder="Search products...">
+
+    <div class="actions">
+        <button id="wishlistBtn">♡ <span id="wishCount">0</span></button>
+        <button id="bagBtn">🛍 Cart (<span id="bagCount">0</span>)</button>
+    </div>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="hero-text">
+        <small>YOUR STYLE, YOUR RULES</small>
+        <h1>Discover your<br><span>own</span> style.</h1>
+        <p>
+            Find your favourite fashion, everyday essentials
+            and trending accessories at Style Market.
+        </p>
+        <button class="btn" onclick="goShop()">SHOP NOW ↗</button>
+    </div>
+
+    <img
+        src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=85"
+        alt="Fashion collection">
+</section>
+
+<section class="section">
+    <div class="subtitle">PICK YOUR STYLE</div>
+    <h2>Shop by Category</h2>
+
+    <div class="categories">
+        <button class="category" data-pick="Women">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80" alt="Women's fashion">
+            <h3>Women's Wear ↗</h3>
+        </button>
+
+        <button class="category" data-pick="Men">
+            <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=600&q=80" alt="Men's fashion">
+            <h3>Men's Wear ↗</h3>
+        </button>
+
+        <button class="category" data-pick="Shoes">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="Shoes">
+            <h3>Shoes ↗</h3>
+        </button>
+
+        <button class="category" data-pick="Accessories">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80" alt="Accessories">
+            <h3>Accessories ↗</h3>
+        </button>
+    </div>
+</section>
+
+<section class="section" id="shop">
+    <div class="subtitle">THE LATEST COLLECTION</div>
+    <h2>Trending Products</h2>
+
+    <div class="shop-tools">
+        <span id="resultCount">8 products</span>
+        <select id="sort">
+            <option value="featured">Featured</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+        </select>
+    </div>
+
+    <div class="filters">
+        <button class="filter active" data-filter="All">All</button>
+        <button class="filter" data-filter="Women">Women</button>
+        <button class="filter" data-filter="Men">Men</button>
+        <button class="filter" data-filter="Shoes">Shoes</button>
+        <button class="filter" data-filter="Accessories">Accessories</button>
+        <button class="filter" data-filter="Under1000">Under ₹1,000</button>
+    </div>
+
+    <div class="products" id="products"></div>
+    <div class="empty" id="empty">No products found. Try another search.</div>
+</section>
+
+<section class="promo">
+    <div>
+        <div class="subtitle">SPECIAL COLLECTION</div>
+        <h2>Your next favourite look is waiting.</h2>
+        <p>Fresh fashion. Great prices. Your style.</p>
+    </div>
+    <button class="btn" onclick="goShop()">EXPLORE NOW ↗</button>
+</section>
+
+<section class="newsletter">
+    <div class="subtitle">JOIN STYLE MARKET</div>
+    <h2>Get the Latest Offers</h2>
+    <p>Subscribe for updates about new collections and deals.</p>
+
+    <form id="newsletter">
+        <input type="email" id="email"
+            placeholder="Enter your email" required>
+        <button type="submit">SUBSCRIBE</button>
+    </form>
+    <p id="message"></p>
+</section>
+
+</main>
+
+<footer>
+    <div>
+        <div class="logo">STYLE <span>MARKET.</span></div>
+        <p>Your style. Your market. Your choice.</p>
+        <p>© <span id="year"></span> Style Market. Demo website.</p>
+    </div>
+    <div>
+        <strong>Quick Links</strong>
+        <p><a href="#shop">Shop Products</a></p>
+        <p><a href="#shop">New Collection</a></p>
+    </div>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+
+<aside class="drawer" id="drawer">
+    <div class="drawer-header">
+        <h3>Your Shopping Cart</h3>
+        <button id="close">×</button>
+    </div>
+
+    <div class="bag-items" id="bagItems"></div>
+
+    <div class="bag-footer">
+        <div class="total">
+            <span>Total</span>
+            <strong id="total">₹0</strong>
+        </div>
+        <button class="btn" id="checkout">CHECKOUT ↗</button>
+        <p style="font-size:12px;color:#777;margin-top:10px">
+            Demo only. Online payments are not connected.
+        </p>
+    </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const products = [
+    {
+        id: 1, brand: "STYLE MARKET",
+        name: "Classic White T-Shirt",
+        category: "Women", price: 699, old: 999,
+        rating: 4.8,
+        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80"
+    },
+    {
+        id: 2, brand: "STEP UP",
+        name: "Red Street Sneakers",
+        category: "Shoes", price: 1899, old: 2499,
+        rating: 4.7,
+        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
+    },
+    {
+        id: 3, brand: "URBAN STYLE",
+        name: "Casual Men's Shirt",
+        category: "Men", price: 1199, old: 1599,
+        rating: 4.6,
+        image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=700&q=80"
+    },
+    {
+        id: 4, brand: "FASHION HUB",
+        name: "Elegant Shoulder Bag",
+        category: "Accessories", price: 899, old: 1299,
+        rating: 4.5,
+        image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=80"
+    },
+    {
+        id: 5, brand: "DENIM CLUB",
+        name: "Blue Denim Jeans",
+        category: "Women", price: 1499, old: 1999,
+        rating: 4.8,
+        image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=700&q=80"
+    },
+    {
+        id: 6, brand: "URBAN VISION",
+        name: "Classic Sunglasses",
+        category: "Accessories", price: 599, old: 899,
+        rating: 4.4,
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80"
+    },
+    {
+        id: 7, brand: "COMFORT ZONE",
+        name: "Casual Hoodie",
+        category: "Men", price: 1299, old: 1799,
+        rating: 4.7,
+        image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=700&q=80"
+    },
+    {
+        id: 8, brand: "TIME HOUSE",
+        name: "Everyday Watch",
+        category: "Accessories", price: 1599, old: 2199,
+        rating: 4.6,
+        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80"
+    }
+];
+
+let category = "All";
+let searchText = "";
+let sort = "featured";
+let wishlist = new Set();
+let bag = [];
+
+const productsArea = document.getElementById("products");
+const toast = document.getElementById("toast");
+
+function money(amount) {
+    return "₹" + amount.toLocaleString("en-IN");
+}
+
+function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 2200);
+}
+
+function getVisibleProducts() {
+    let list = products.filter(p => {
+        const matchesCategory =
+            category === "All" ||
+            (category === "Under1000" && p.price < 1000) ||
+            p.category === category;
+
+        const text = (p.name + " " + p.brand + " " + p.category).toLowerCase();
+        return matchesCategory && text.includes(searchText.toLowerCase());
+    });
+
+    if (sort === "low") list.sort((a, b) => a.price - b.price);
+    if (sort === "high") list.sort((a, b) => b.price - a.price);
+    if (sort === "rating") list.sort((a, b) => b.rating - a.rating);
+
+    return list;
+}
+
+function renderProducts() {
+    const list = getVisibleProducts();
+
+    document.getElementById("resultCount").textContent =
+        list.length + (list.length === 1 ? " product" : " products");
+
+    document.getElementById("empty").style.display =
+        list.length ? "none" : "block";
+
+    productsArea.innerHTML = list.map(p => {
+        const discount = Math.round((1 - p.price / p.old) * 100);
+        const liked = wishlist.has(p.id);
+
+        return `
+        <article class="product">
+            <div class="product-image">
+                <img src="${p.image}" alt="${p.name}" loading="lazy">
+                <button class="heart ${liked ? "liked" : ""}"
+                    data-wish="${p.id}" aria-label="Wishlist">
+                    ${liked ? "♥" : "♡"}
+                </button>
+                <button class="add" data-add="${p.id}">
+                    + ADD TO CART
+                </button>
+            </div>
+            <div class="product-info">
+                <div class="brand">${p.brand}</div>
+                <div class="name">${p.name}</div>
+                <div class="price">
+                    ${money(p.price)}
+                    <span class="old">${money(p.old)}</span>
+                    <span class="discount">${discount}% OFF</span>
+                </div>
+                <div class="rating">★ ${p.rating} | Customer rating</div>
+            </div>
+        </article>`;
+    }).join("");
+
+    document.getElementById("wishCount").textContent = wishlist.size;
+}
+
+function addToBag(id) {
+    const item = bag.find(p => p.id === id);
+
+    if (item) {
+        item.qty++;
+    } else {
+        bag.push({ id, qty: 1 });
+    }
+
+    renderBag();
+    showToast("Product added to cart!");
+}
+
+function toggleWishlist(id) {
+    if (wishlist.has(id)) {
+        wishlist.delete(id);
+        showToast("Removed from wishlist");
+    } else {
+        wishlist.add(id);
+        showToast("Added to wishlist!");
+    }
+    renderProducts();
+}
+
+productsArea.addEventListener("click", event => {
+    const addButton = event.target.closest("[data-add]");
+    const wishButton = event.target.closest("[data-wish]");
+
+    if (addButton) addToBag(Number(addButton.dataset.add));
+    if (wishButton) toggleWishlist(Number(wishButton.dataset.wish));
+});
+
+function renderBag() {
+    const count = bag.reduce((sum, item) => sum + item.qty, 0);
+    document.getElementById("bagCount").textContent = count;
+
+    const bagItems = document.getElementById("bagItems");
+
+    if (!bag.length) {
+        bagItems.innerHTML = "<p style='padding:30px 0'>Your cart is empty!</p>";
+    } else {
+        bagItems.innerHTML = bag.map(item => {
+            const p = products.find(product => product.id === item.id);
+
+            return `
+            <div class="bag-item">
+                <img src="${p.image}" alt="${p.name}">
+                <div>
+                    <strong>${p.name}</strong>
+                    <p>${money(p.price)}</p>
+                    <button data-qty="${p.id}" data-change="-1">−</button>
+                    ${item.qty}
+                    <button data-qty="${p.id}" data-change="1">+</button>
+                    <button data-remove="${p.id}">Remove</button>
+                </div>
+            </div>`;
+        }).join("");
+    }
+
+    const total = bag.reduce((sum, item) => {
+        const p = products.find(product => product.id === item.id);
+        return sum + p.price * item.qty;
+    }, 0);
+
+    document.getElementById("total").textContent = money(total);
+}
+
+document.getElementById("bagItems").addEventListener("click", event => {
+    const qtyButton = event.target.closest("[data-qty]");
+    const removeButton = event.target.closest("[data-remove]");
+
+    if (qtyButton) {
+        const id = Number(qtyButton.dataset.qty);
+        const item = bag.find(p => p.id === id);
+        item.qty += Number(qtyButton.dataset.change);
+
+        if (item.qty <= 0) {
+            bag = bag.filter(p => p.id !== id);
+        }
+        renderBag();
+    }
+
+    if (removeButton) {
+        const id = Number(removeButton.dataset.remove);
+        bag = bag.filter(p => p.id !== id);
+        renderBag();
+    }
+});
+
+function setCategory(value) {
+    category = value;
+
+    document.querySelectorAll("[data-filter]").forEach(button => {
+        button.classList.toggle("active", button.dataset.filter === value);
+    });
+
+    renderProducts();
+    goShop();
+}
+
+document.querySelectorAll("[data-filter]").forEach(button => {
+    button.addEventListener("click", () => setCategory(button.dataset.filter));
+});
+
+document.querySelectorAll("[data-category]").forEach(button => {
+    button.addEventListener("click", () => setCategory(button.dataset.category));
+});
+
+document.querySelectorAll("[data-pick]").forEach(button => {
+    button.addEventListener("click", () => setCategory(button.dataset.pick));
+});
+
+document.getElementById("search").addEventListener("input", event => {
+    searchText = event.target.value.trim();
+    renderProducts();
+});
+
+document.getElementById("sort").addEventListener("change", event => {
+    sort = event.target.value;
+    renderProducts();
+});
+
+function goShop() {
+    document.getElementById("shop").scrollIntoView({ behavior: "smooth" });
+}
+
+const drawer = document.getElementById("drawer");
+const overlay = document.getElementById("overlay");
+
+function openBag() {
+    drawer.classList.add("show");
+    overlay.classList.add("show");
+}
+
+function closeBag() {
+    drawer.classList.remove("show");
+    overlay.classList.remove("show");
+}
+
+document.getElementById("bagBtn").addEventListener("click", openBag);
+document.getElementById("close").addEventListener("click", closeBag);
+overlay.addEventListener("click", closeBag);
+
+document.getElementById("wishlistBtn").addEventListener("click", () => {
+    if (!wishlist.size) {
+        showToast("Tap the heart to save your favourite products.");
+        return;
+    }
+
+    category = "All";
+    searchText = "";
+    document.getElementById("search").value = "";
+    renderProducts();
+
+    document.querySelectorAll(".product").forEach(card => {
+        const button = card.querySelector("[data-wish]");
+        card.style.display = wishlist.has(Number(button.dataset.wish)) ? "" : "none";
+    });
+
+    document.getElementById("resultCount").textContent =
+        wishlist.size + " saved products";
+
+    goShop();
+});
+
+document.getElementById("checkout").addEventListener("click", () => {
+    if (!bag.length) {
+        showToast("Your cart is empty!");
+    } else {
+        showToast("Demo checkout: payment is not connected.");
+    }
+});
+
+document.getElementById("newsletter").addEventListener("submit", event => {
+    event.preventDefault();
+    document.getElementById("message").textContent =
+        "Thank you for subscribing to Style Market!";
+    document.getElementById("email").value = "";
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+renderProducts();
+renderBag();
+</script>
+
+</body>
+</html>
